@@ -3,7 +3,9 @@
 #include <locale.h> //biblioteca de alocaçoes de texto por regiao
 #include <string.h> //bliblioteca de string
 
-int registro(){
+int registro(){  // funcao de cadastramento 
+		
+		//criação das variavies 
 		
 		char arquivo[40];
 		char cpf[40];
@@ -11,13 +13,15 @@ int registro(){
 		char sobrenome[40];
 		char cargo[40];
 		
-		printf("Digite o CPFa ser cadastrado: ");
-		scanf("%s", cpf);
+		// fim de variavesi 
+		
+		printf("Digite o CPFa ser cadastrado: "); // cleta de informação
+		scanf("%s", cpf); //%s serve pra salvar string
 		
 		strcpy(arquivo, cpf); //reposnsavel por copiar ao valores das string
 		
 		FILE *file; // creia arquivo em banco de dados 
-		file = fopen(arquivo, "w"); //cria o arquivo
+		file = fopen(arquivo, "w"); //cria o arquivo "W" dubcao escrever
 		fprintf(file,cpf); // salva o valor 
 		fclose(file); //fecha o arquivo **importante fechar**
 		
@@ -122,6 +126,7 @@ int main()
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - sair do programa\n ");
 		printf("Opção: "); // fim do menu principal
 	
 	
@@ -145,6 +150,11 @@ int main()
 			
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado por usar o sistema\n");
+			return 0;
 			break;
 			
 			default:
